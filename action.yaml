@@ -1,0 +1,11 @@
+name: 'Hello there'
+description: 'Composite test'
+runs:
+  using: "composite"
+  steps:
+    - run: echo Hello ${{ inputs.who-to-greet }}.
+      shell: bash
+    - name: checkout
+      uses: actions/checkout@v2
+    - run: git status
+      shell: bash
